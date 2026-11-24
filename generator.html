@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Công Cụ Tạo Link Thiệp Cưới Đỗ Đông & Phạm Khánh</title>
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Be+Vietnam+Pro:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <style>
+    :root {
+      --primary: #8b1d36;
+      --primary-hover: #6d1428;
+      --gold: #c59b27;
+      --bg: #f8fafc;
+      --card: #ffffff;
+      --border: #e2e8f0;
+      --text: #1e293b;
+      --text-muted: #64748b;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Be Vietnam Pro', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 24px 16px;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 0 auto;
+    }
+
+    .header {
+      text-align: center;
+      margin-bottom: 24px;
+    }
+    .header h1 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2.8rem;
+      color: var(--primary);
+      margin-bottom: 2px;
+      line-height: 1.1;
+    }
+    .header p {
+      color: var(--text-muted);
+      font-size: 0.95rem;
+    }
+
+    .card {
+      background: var(--card);
+      border-radius: 16px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+      border: 1px solid var(--border);
+      padding: 24px;
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+    label {
+      display: block;
+      font-weight: 600;
+      font-size: 0.9rem;
+      margin-bottom: 6px;
+      color: var(--text);
+    }
+    .hint {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      margin-top: 4px;
+    }
+
+    input[type="text"], select, textarea {
+      width: 100%;
+      padding: 11px 14px;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    input[type="text"]:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 640px) {
+      .row { grid-template-columns: 1fr; }
+    }
+
+    .checkbox-group {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 10px;
+      font-size: 0.9rem;
+    }
+    .checkbox-group input {
+      width: 18px;
+      height: 18px;
+      accent-color: var(--primary);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      background: var(--primary);
+      color: #fff;
+      border: none;
+      padding: 12px 24px;
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+    .btn:hover {
+      background: var(--primary-hover);
+    }
+
+    .btn-secondary {
+      background: #e2e8f0;
+      color: #334155;
+    }
+    .btn-secondary:hover {
+      background: #cbd5e1;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+      text-align: left;
+    }
+    th, td {
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--border);
+    }
+    th {
+      background: #f8fafc;
+      font-weight: 600;
+      color: #475569;
+    }
+
+    .action-btns {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+    .btn-sm {
+      padding: 6px 12px;
+      font-size: 0.8rem;
+      border-radius: 6px;
+      border: none;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: opacity 0.2s;
+    }
+    .btn-copy-link {
+      background: #e0f2fe;
+      color: #0369a1;
+    }
+    .btn-copy-msg {
+      background: #fef3c7;
+      color: #92400e;
+    }
+    .btn-open {
+      background: #dcfce7;
+      color: #166534;
+      text-decoration: none;
+    }
+
+    .alert {
+      padding: 14px 18px;
+      border-radius: 12px;
+      background: #fef2f2;
+      border: 1px solid #fee2e2;
+      color: #991b1b;
+      font-size: 0.88rem;
+      margin-bottom: 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="header">
+      <h1>Đỗ Đông & Phạm Khánh</h1>
+      <p>Công cụ tạo link thiệp cưới cá nhân hoá gửi bạn bè tại Quảng Bình</p>
+    </div>
+
+    <div class="alert">
+      <i class="fa-solid fa-wand-magic-sparkles" style="font-size: 1.4rem;"></i>
+      <div>
+        <strong>Tự động cá nhân hoá:</strong> Mỗi khách mời khi bấm vào link sẽ thấy con dấu sáp <strong>Đ&K</strong> mở ra, và tên của họ xuất hiện trang trọng trên bức thiệp kèm lời chúc riêng!
+      </div>
+    </div>
+
+    <div class="card">
+      <div class="form-group">
+        <label for="baseUrl">Đường dẫn Website thiệp cưới (Base URL)</label>
+        <input type="text" id="baseUrl" placeholder="https://damcuoicuachungminh.com/index.html">
+        <div class="hint">Khi test trên máy tính để mặc định <code>index.html</code>. Sau khi đưa lên Vercel/Netlify thì dán link website vào đây.</div>
+      </div>
+
+      <div class="row">
+        <div class="form-group">
+          <label for="defaultPrefix">Danh xưng xưng hô</label>
+          <select id="defaultPrefix">
+            <option value="Bạn">Bạn (Bạn bè, đồng nghiệp)</option>
+            <option value="Anh">Anh</option>
+            <option value="Chị">Chị</option>
+            <option value="Em">Em</option>
+            <option value="Gia đình">Gia đình (Gia đình bác, chú...)</option>
+            <option value="none">-- Không dùng danh xưng (Chỉ gọi tên) --</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Tùy chọn bổ sung</label>
+          <div class="checkbox-group">
+            <input type="checkbox" id="includePlus" checked>
+            <label for="includePlus" style="margin-bottom:0; font-weight: normal;">Thêm cụm <strong>"& Người thương"</strong></label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label for="guestList">Danh sách tên khách mời (Mỗi người 1 dòng)</label>
+        <textarea id="guestList" rows="6" placeholder="Nguyễn Văn A&#10;Trần Thị B&#10;Huy Hoàng&#10;Khánh Linh"></textarea>
+        <div class="hint">💡 Mẹo: Bạn có thể copy cả một cột tên từ file Excel và dán thẳng vào đây!</div>
+      </div>
+
+      <div style="display: flex; gap: 12px;">
+        <button class="btn" id="generateBtn">
+          <i class="fa-solid fa-bolt"></i> Tạo Danh Sách Link & Lời Mời
+        </button>
+        <button class="btn btn-secondary" id="clearBtn">
+          <i class="fa-solid fa-rotate-left"></i> Xoá làm lại
+        </button>
+      </div>
+    </div>
+
+    <!-- Bảng kết quả -->
+    <div class="card" id="resultCard" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px;">
+        <h2 style="font-size: 1.15rem; color: var(--primary);">
+          Danh Sách Link Đã Tạo (<span id="totalGuests">0</span> người)
+        </h2>
+        <button class="btn btn-sm btn-secondary" id="exportCsvBtn">
+          <i class="fa-solid fa-file-csv"></i> Xuất File Excel (CSV)
+        </button>
+      </div>
+
+      <div class="table-container">
+        <table>
+          <thead>
+            <tr>
+              <th style="width: 50px;">STT</th>
+              <th>Khách Mời</th>
+              <th>Đường Dẫn Link Thiệp</th>
+              <th style="width: 260px;">Thao Tác Nhanh</th>
+            </tr>
+          </thead>
+          <tbody id="resultTableBody"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const defaultUrl = window.location.href.replace('generator.html', 'index.html');
+    document.getElementById('baseUrl').value = defaultUrl;
+
+    const generateBtn = document.getElementById('generateBtn');
+    const clearBtn = document.getElementById('clearBtn');
+    const resultCard = document.getElementById('resultCard');
+    const tableBody = document.getElementById('resultTableBody');
+    const totalGuestsSpan = document.getElementById('totalGuests');
+    const exportCsvBtn = document.getElementById('exportCsvBtn');
+
+    let generatedData = [];
+
+    generateBtn.addEventListener('click', () => {
+      let baseUrl = document.getElementById('baseUrl').value.trim() || 'index.html';
+      const prefixChoice = document.getElementById('defaultPrefix').value;
+      const includePlus = document.getElementById('includePlus').checked;
+      const rawText = document.getElementById('guestList').value.trim();
+
+      if (!rawText) {
+        alert("Vui lòng nhập ít nhất một tên khách mời!");
+        return;
+      }
+
+      const lines = rawText.split('\n')
+        .map(line => line.trim())
+        .filter(line => line.length > 0);
+
+      tableBody.innerHTML = '';
+      generatedData = [];
+
+      lines.forEach((name, index) => {
+        const params = new URLSearchParams();
+        params.append('to', name);
+        if (prefixChoice !== 'none') {
+          params.append('prefix', prefixChoice);
+        }
+        if (includePlus) {
+          params.append('plus', '1');
+        }
+
+        const separator = baseUrl.includes('?') ? '&' : '?';
+        const finalUrl = `${baseUrl}${separator}${params.toString()}`;
+
+        let displayName = prefixChoice !== 'none' ? `${prefixChoice} ${name}` : name;
+        if (includePlus) displayName += " & Người thương";
+
+        // Tin nhắn gửi Zalo của Đỗ Đông & Phạm Khánh
+        const messageTemplate = `Thân gửi ${displayName}!\nTụi mình trân trọng gửi lời mời đến ${displayName} tham dự Lễ Thành Hôn của Đỗ Đông & Phạm Khánh tại Quảng Bình vào Chủ Nhật, ngày 20/12/2026.\nChạm vào con dấu sáp Đ&K để mở thiệp cưới nhé:\n${finalUrl}`;
+
+        generatedData.push({
+          index: index + 1,
+          name: displayName,
+          url: finalUrl,
+          message: messageTemplate
+        });
+
+        const tr = document.createElement('tr');
+        tr.innerHTML = `
+          <td>${index + 1}</td>
+          <td><strong>${displayName}</strong></td>
+          <td>
+            <input type="text" value="${finalUrl}" readonly style="font-size: 0.8rem; padding: 5px 8px; background: #f8fafc;" onclick="this.select()">
+          </td>
+          <td>
+            <div class="action-btns">
+              <button class="btn-sm btn-copy-link" onclick="copyText('${finalUrl}', 'Đã chép link thiệp!')">
+                <i class="fa-regular fa-copy"></i> Link
+              </button>
+              <button class="btn-sm btn-copy-msg" onclick="copyMessage(${index})">
+                <i class="fa-solid fa-comment-dots"></i> Tin nhắn Zalo
+              </button>
+              <a href="${finalUrl}" target="_blank" class="btn-sm btn-open">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Mở xem
+              </a>
+            </div>
+          </td>
+        `;
+        tableBody.appendChild(tr);
+      });
+
+      totalGuestsSpan.textContent = lines.length;
+      resultCard.style.display = 'block';
+      resultCard.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    clearBtn.addEventListener('click', () => {
+      document.getElementById('guestList').value = '';
+      resultCard.style.display = 'none';
+      tableBody.innerHTML = '';
+      generatedData = [];
+    });
+
+    function copyText(text, successMsg) {
+      navigator.clipboard.writeText(text).then(() => {
+        alert(successMsg || "Đã sao chép vào bộ nhớ tạm!");
+      }).catch(() => {
+        prompt("Sao chép link này:", text);
+      });
+    }
+
+    function copyMessage(index) {
+      if (generatedData[index]) {
+        copyText(generatedData[index].message, "Đã sao chép tin nhắn Zalo kèm link mời! Bạn chỉ cần dán (Paste) vào Zalo/Messenger.");
+      }
+    }
+
+    exportCsvBtn.addEventListener('click', () => {
+      if (generatedData.length === 0) return;
+      let csvContent = "\uFEFFSTT,Tên Khách Mời,Link Thiệp Cưới\n";
+      generatedData.forEach(item => {
+        csvContent += `"${item.index}","${item.name}","${item.url}"\n`;
+      });
+
+      const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });
+      const link = document.createElement("a");
+      const url = URL.createObjectURL(blob);
+      link.setAttribute("href", url);
+      link.setAttribute("download", "danh_sach_link_thiep_cuoi.csv");
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    });
+  </script>
+</body>
+</html>
