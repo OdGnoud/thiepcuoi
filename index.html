@@ -981,110 +981,7 @@
       line-height: 1.5;
     }
 
-    /* ==========================================================
-       HỘP MỪNG CƯỚI (ĐỔI FONT MỀM MẠI, NGHỆ THUẬT)
-       ========================================================== */
-    .gift-nav-tabs {
-      display: flex;
-      gap: 10px;
-      margin-bottom: 18px;
-    }
-    /* Tab chọn chú rể/cô dâu mềm mại lãng mạn */
-    .gift-tab-btn {
-      flex: 1;
-      padding: 11px 8px;
-      border-radius: 14px;
-      border: 1px solid var(--card-border);
-      background: #fff;
-      color: var(--text);
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-weight: 700;
-      font-size: 1.05rem;
-      cursor: pointer;
-      transition: all 0.2s;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-    }
-    .gift-tab-btn.active {
-      background: var(--primary);
-      color: #fff;
-      border-color: var(--primary);
-      box-shadow: 0 4px 14px rgba(139, 29, 54, 0.25);
-    }
 
-    .bank-card-luxury {
-      background: linear-gradient(135deg, #1e293b, #0f172a);
-      color: #fff;
-      border-radius: 20px;
-      padding: 26px 20px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-      text-align: center;
-      position: relative;
-      border: 1px solid rgba(255, 215, 0, 0.35);
-    }
-    .bank-chip {
-      width: 42px;
-      height: 32px;
-      background: linear-gradient(135deg, #ffd700, #b8860b);
-      border-radius: 6px;
-      margin-bottom: 15px;
-    }
-    .bank-brand-title {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1.1rem;
-      letter-spacing: 2px;
-      color: #f1f5f9;
-      opacity: 0.95;
-    }
-    .bank-qr-img {
-      width: 175px;
-      height: 175px;
-      border-radius: 12px;
-      background: #fff;
-      padding: 8px;
-      margin: 12px auto;
-      display: block;
-    }
-    /* Số tài khoản thanh lịch viền vàng */
-    .bank-number-highlight {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1.85rem;
-      font-weight: 700;
-      letter-spacing: 3px;
-      color: #dfb747;
-      text-shadow: 0 2px 10px rgba(223, 183, 71, 0.35);
-      margin: 8px 0;
-    }
-    .bank-holder {
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 1.15rem;
-      letter-spacing: 2px;
-      font-weight: 700;
-      color: #f8fafc;
-    }
-    .btn-copy-account {
-      background: rgba(255, 255, 255, 0.15);
-      color: #fff;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      padding: 9px 22px;
-      border-radius: 20px;
-      font-family: var(--font-serif);
-      font-style: italic;
-      font-size: 0.95rem;
-      font-weight: 600;
-      cursor: pointer;
-      margin-top: 15px;
-      transition: background 0.2s;
-    }
-    .btn-copy-account:hover {
-      background: rgba(255, 255, 255, 0.28);
-    }
 
     /* Bottom Nav */
     .bottom-floating-nav {
@@ -1484,48 +1381,7 @@
       </div>
     </section>
 
-    <!-- Phân đoạn 10: Hộp Mừng Cưới (Đổi font mềm mại, nghệ thuật) -->
-    <section class="section-wrap" id="gift">
-      <div class="sec-head">
-        <div class="sec-subtitle">Gửi Lời Chúc Mừng</div>
-        <h2 class="sec-title">Hộp Mừng Cưới</h2>
-        <div class="sec-divider"></div>
-      </div>
 
-      <!-- Tab Chuyển Đổi: Chú Rể / Cô Dâu mềm mại -->
-      <div class="gift-nav-tabs">
-        <button class="gift-tab-btn active" id="tabGroom" onclick="switchGiftTab('groom')">
-          <i class="fa-solid fa-user-tie"></i> Mừng Chú Rể (Đỗ Đông)
-        </button>
-        <button class="gift-tab-btn" id="tabBride" onclick="switchGiftTab('bride')">
-          <i class="fa-solid fa-user-nurse"></i> Mừng Cô Dâu (Phạm Khánh)
-        </button>
-      </div>
-
-      <!-- Thẻ Ngân Hàng Mô Phỏng Sang Trọng (Chú Rể Đỗ Đông) -->
-      <div class="bank-card-luxury" id="bankCardGroom">
-        <div class="bank-chip"></div>
-        <div class="bank-brand-title">MB Bank • Chú Rể</div>
-        <img class="bank-qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020101021138540010A00000072701240006970422011003456789100208QRIBFTTA5204601153037045802VN5913DO%20DONG6006HA%20NOI63045678" alt="QR Đỗ Đông">
-        <div class="bank-number-highlight">0345 678 910</div>
-        <div class="bank-holder">DO DONG</div>
-        <button class="btn-copy-account" onclick="copyTextToClip('0345678910', 'Đã sao chép số tài khoản Chú Rể Đỗ Đông!')">
-          <i class="fa-regular fa-copy"></i> Sao chép STK
-        </button>
-      </div>
-
-      <!-- Thẻ Ngân Hàng Mô Phỏng Sang Trọng (Cô Dâu Phạm Khánh) -->
-      <div class="bank-card-luxury" id="bankCardBride" style="display: none;">
-        <div class="bank-chip"></div>
-        <div class="bank-brand-title">Techcombank • Cô Dâu</div>
-        <img class="bank-qr-img" src="https://api.qrserver.com/v1/create-qr-code/?size=250x250&data=00020101021138540010A000000727012400069704360110190367899990208QRIBFTTA5204601153037045802VN5913PHAM%20KHANH6006HA%20NOI630489AB" alt="QR Phạm Khánh">
-        <div class="bank-number-highlight">1903 6789 999</div>
-        <div class="bank-holder">PHAM KHANH</div>
-        <button class="btn-copy-account" onclick="copyTextToClip('19036789999', 'Đã sao chép số tài khoản Cô Dâu Phạm Khánh!')">
-          <i class="fa-regular fa-copy"></i> Sao chép STK
-        </button>
-      </div>
-    </section>
 
     <!-- Footer Cảm Ơn -->
     <footer class="footer-lux">
@@ -1555,10 +1411,7 @@
       <i class="fa-solid fa-envelope-circle-check"></i>
       <span>RSVP</span>
     </a>
-    <a href="#gift" class="nav-icon-link">
-      <i class="fa-solid fa-gift"></i>
-      <span>Mừng Cưới</span>
-    </a>
+
   </div>
 
   <!-- Lightbox Modal phóng to ảnh -->
@@ -1693,35 +1546,7 @@
       document.getElementById('lightboxModal').classList.remove('active');
     }
 
-    /* 6. TAB MỪNG CƯỚI */
-    function switchGiftTab(type) {
-      const tabGroom = document.getElementById('tabGroom');
-      const tabBride = document.getElementById('tabBride');
-      const cardGroom = document.getElementById('bankCardGroom');
-      const cardBride = document.getElementById('bankCardBride');
-
-      if (type === 'groom') {
-        tabGroom.classList.add('active');
-        tabBride.classList.remove('active');
-        cardGroom.style.display = 'block';
-        cardBride.style.display = 'none';
-      } else {
-        tabBride.classList.add('active');
-        tabGroom.classList.remove('active');
-        cardBride.style.display = 'block';
-        cardGroom.style.display = 'none';
-      }
-    }
-
-    function copyTextToClip(text, msg) {
-      navigator.clipboard.writeText(text).then(() => {
-        alert(msg);
-      }).catch(() => {
-        alert("STK: " + text);
-      });
-    }
-
-    /* 7. RSVP FORM */
+    /* 6. RSVP FORM */
     function handleRsvpSubmit(e) {
       e.preventDefault();
       const name = document.getElementById('rsvpNameInput').value.trim();
